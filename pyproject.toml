@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "luxinstaller"
+version = "0.1.0"
+description = "LuxInstaller: install Luma3DS (or a fork like LuxiOS) on a Nintendo 3DS/2DS. Prepares the SD card, runs MSET9 for you and walks you through the console steps."
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.27",
+    "textual>=0.80",
+    # Runs the guide's own selecting.js. Wheels exist for win_amd64, macOS universal2 and
+    # manylinux x86_64; Windows ARM64 has none (use x64 Python there).
+    "quickjs>=1.19.4",
+]
+
+[project.scripts]
+luxinstaller = "main:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pyinstaller>=6"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

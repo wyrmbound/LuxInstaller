@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>LuxInstaller: Luxi, the LuxiOS mascot, with an SD card</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2C3470"/><stop offset="1" stop-color="#1B2045"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- Luxi (from LuxiOS branding/luxi-icon.svg), shifted up and left to make room for the card -->
+  <g transform="translate(-26 -40) scale(0.94)">
+    <path d="M256.0,74.0 L295.4,135.7 L362.0,105.1 L361.8,178.3 L434.3,188.6 L394.6,250.1 L450.0,297.9 L383.3,328.2 L404.1,398.4 L331.7,387.8 L311.2,458.1 L256.0,410.0 L200.8,458.1 L180.3,387.8 L107.9,398.4 L128.7,328.2 L62.0,297.9 L117.4,250.1 L77.7,188.6 L150.2,178.3 L150.0,105.1 L216.6,135.7 Z" fill="#1E1B2E"/>
+    <path d="M304.5,105.0 L325.2,162.3 L386.0,157.4 L372.4,216.8 L426.2,245.5 L382.7,288.2 L412.5,341.5 L352.7,353.8 L349.0,414.7 L292.1,392.8 L256.0,442.0 L219.9,392.8 L163.0,414.7 L159.3,353.8 L99.5,341.5 L129.3,288.2 L85.8,245.5 L139.6,216.8 L126.0,157.4 L186.8,162.3 L207.5,105.0 L256.0,142.0 Z" fill="#2D2942"/>
+    <path d="M144.0,218.0 Q106.0,106.0 196.0,146.0 Z" fill="#F7C948" stroke="#1E1B2E" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M152.0,196.0 Q128.0,130.0 182.0,154.0 Z" fill="#2EC4B6"/>
+    <path d="M368.0,218.0 Q406.0,106.0 316.0,146.0 Z" fill="#F7C948" stroke="#1E1B2E" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M360.0,196.0 Q384.0,130.0 330.0,154.0 Z" fill="#2EC4B6"/>
+    <ellipse cx="256" cy="276" rx="122" ry="112" fill="#F7C948" stroke="#1E1B2E" stroke-width="8"/>
+    <ellipse cx="256" cy="328" rx="62" ry="40" fill="#FFF4D6"/>
+    <path d="M264.0,176.0 L238.0,220.0 L258.0,220.0 L246.0,254.0 L278.0,206.0 L258.0,206.0 Z" fill="#2EC4B6" stroke="#1E1B2E" stroke-width="4" stroke-linejoin="round"/>
+    <ellipse cx="206" cy="278" rx="24" ry="29" fill="#1E1B2E"/>
+    <ellipse cx="306" cy="278" rx="24" ry="29" fill="#1E1B2E"/>
+    <ellipse cx="206" cy="284" rx="15" ry="19" fill="#2EC4B6"/>
+    <ellipse cx="306" cy="284" rx="15" ry="19" fill="#2EC4B6"/>
+    <circle cx="214" cy="268" r="8" fill="#fff"/>
+    <circle cx="314" cy="268" r="8" fill="#fff"/>
+    <ellipse cx="168" cy="316" rx="16" ry="9" fill="#D99A1E" opacity=".7"/>
+    <ellipse cx="344" cy="316" rx="16" ry="9" fill="#D99A1E" opacity=".7"/>
+    <path d="M242.0,306.0 Q256.0,300.0 270.0,306.0 Q256.0,324.0 242.0,306.0 Z" fill="#1E1B2E"/>
+    <path d="M256.0,318.0 Q256.0,336.0 236.0,338.0 M256.0,318.0 Q256.0,336.0 276.0,338.0" fill="none" stroke="#1E1B2E" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- SD card with an install arrow -->
+  <g transform="rotate(-8 392 384)">
+    <path d="M318,286 L432,286 Q446,286 446,300 L446,462 Q446,476 432,476 L318,476 Q304,476 304,462 L304,322 Z"
+          fill="#FFF4D6" stroke="#1E1B2E" stroke-width="10" stroke-linejoin="round"/>
+    <rect x="332" y="300" width="14" height="38" rx="4" fill="#F7C948"/>
+    <rect x="356" y="300" width="14" height="38" rx="4" fill="#F7C948"/>
+    <rect x="380" y="300" width="14" height="38" rx="4" fill="#F7C948"/>
+    <rect x="404" y="300" width="14" height="38" rx="4" fill="#F7C948"/>
+    <path d="M375,356 L375,410 M347,388 L375,418 L403,388" fill="none" stroke="#2EC4B6" stroke-width="20"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="335" y="438" width="80" height="14" rx="7" fill="#2EC4B6"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+build/
+dist/
+*.spec
+# Local clone of the guide; the app downloads its own copy at runtime.
+vendor/

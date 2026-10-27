@@ -184,7 +184,8 @@ no longer match what the steps were written from.
 - **MSET9 bug:** while testing, we found a bug in the official MSET9 v2.2 script: it skips renaming
   your data folder back when it's run without a console. The cause is a misplaced parenthesis in
   `remove()`, so the check becomes `os.path.exists(True)`. LuxInstaller works around it by finishing
-  the guide's manual-removal rename.
+  the guide's manual-removal rename. The fix has been sent upstream as
+  [hacks-guide/MSET9#21](https://github.com/hacks-guide/MSET9/pull/21).
 - **Not finished yet:**
   - macOS and Linux drive listing is untested on real machines;
   - the SD card read/write test (like h2testw) isn't offered in the app yet.

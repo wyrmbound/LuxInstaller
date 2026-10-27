@@ -182,8 +182,9 @@ no longer match what the steps were written from.
 - **Tested on real hardware:** one complete install on an Old 2DS (11.17.0-50U) from Windows 11,
   October 2026, including the MSET9 run, the NAND backup and a LuxiOS install.
 - **MSET9 bug:** while testing, we found a bug in the official MSET9 v2.2 script: it skips renaming
-  your data folder back when it's run without a console. LuxInstaller works around it (see
-  [the report upstream](https://github.com/hacks-guide/MSET9/issues)).
+  your data folder back when it's run without a console. The cause is a misplaced parenthesis in
+  `remove()`, so the check becomes `os.path.exists(True)`. LuxInstaller works around it by finishing
+  the guide's manual-removal rename.
 - **Not finished yet:**
   - macOS and Linux drive listing is untested on real machines;
   - the SD card read/write test (like h2testw) isn't offered in the app yet.

@@ -86,6 +86,9 @@ def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     world = fh.make_world(Path(tempfile.mkdtemp()))
     fh.install(world)
+    import dataclasses
+    import sdcard
+    fake_drives = sdcard.list_drives
     app = gh.make_wizard(world)
     app.deiconify()
     app.geometry("900x660+40+40")
@@ -116,6 +119,21 @@ def main() -> int:
     gh.pump_until(app, lambda: d.tree.get_children())
     d.tree.selection_set(d.tree.get_children()[0])
     gh.pump(app)
+    # For the picture only, show the fake card as E:\ instead of its temp folder (which has the user name).
+    sdcard.list_drives = lambda: [dataclasses.replace(x, mount="E:\\") for x in fake_drives()]
+    d.refresh()
+    gh.pump_until(app, lambda: d.tree.get_children() and d.tree.item(d.tree.get_children()[0], "values")[0] == "E:\\")
+    d.tree.selection_set(d.tree.get_children()[0])
+    gh.pump(app)
+    d.label_var.set("3DS")
+    gh.pump(app)
+    print(shoot(app, "gui-drive.png"))
+    sdcard.list_drives = fake_drives
+    d.refresh()
+    gh.pump_until(app, lambda: d.tree.get_children() and d.tree.item(d.tree.get_children()[0], "values")[0] != "E:\\")
+    d.tree.selection_set(d.tree.get_children()[0])
+    gh.pump(app)
+    d.label_var.set("")
     d.label_var.set("3DS")
     gh.pump_until(app, lambda: str(d.next_btn["state"]) == "normal")
     d.next_btn.invoke()
@@ -137,6 +155,14 @@ def main() -> int:
         (w.move_btn if w.current_id == "move" else w.yes_btn).invoke()
         gh.pump(app)
     print(shoot(app, "gui-walk.png"))
+
+    # The last page, as after a real run that installed a fork (example backup path).
+    from luma_build import LumaChoice
+    app.core.state.luma = LumaChoice("github", repo="wyrmbound/LuxiOS").to_dict()
+    app.core.state.backup_dir = r"C:\Users\you\3DS-Backups\2026-10-27_183228"
+    app.show("done")
+    gh.pump(app)
+    print(shoot(app, "gui-done.png"))
     app.destroy()
     return 0
 
